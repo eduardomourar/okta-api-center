@@ -67,7 +67,7 @@ There are a couple of values you should fill in now, such as `OKTA_TENANT` and `
 
 ## Set up Kong
 
-Make sure you have Kong up and running. If you have not yet set up your Kong tenant, you might want to check out their [5-minute quickstart](https://docs.konghq.com/enterprise/latest/getting-started/quickstart/).
+Make sure you have Kong up and running. If you have not yet set up your Kong tenant, you might want to check out their [docker installation instruction](https://docs.konghq.com/enterprise/latest/deployment/installation/docker/) or the [docker compose file](./docker-compose.yml).
 
 For now, you just need the URL of your Kong instance. The Kong API gateway typically runs on port 8000, so your url should look something like this:
 
@@ -123,7 +123,7 @@ and then execute this command:
 curl -i -X POST \
   --url http://localhost:8001/services/solar-system/plugins/ \
   --data 'name=openid-connect' \
-  --data 'route_id={{ROUTE_ID}}' \
+  --data 'route.id={{ROUTE_ID}}' \
   --data 'config.issuer={{OKTA_AZ_SERVER_ISSUER}}' \
   --data 'config.client_id={{AUTHN_CLIENT_ID}}' \
   --data 'config.ssl_verify=false' \
@@ -149,7 +149,7 @@ Use the same command as above, but make sure you update the `route_id` and `scop
 curl -i -X POST \
   --url http://localhost:8001/services/solar-system/plugins/ \
   --data 'name=openid-connect' \
-  --data 'route_id={{ROUTE_ID}}' \
+  --data 'route.id={{ROUTE_ID}}' \
   --data 'config.issuer={{OKTA_AZ_SERVER_ISSUER}}' \
   --data 'config.client_id={{AUTHN_CLIENT_ID}}' \
   --data 'config.ssl_verify=false' \
