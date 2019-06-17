@@ -115,7 +115,7 @@ You will get a json object as a result:
 Copy the `id` value from the result. Note: make sure you copy the _route_ id, which is the last value, and not the _service_ id.
 
 ### Add the OIDC plugin to the /planets route
-Update the values for route_id, config.issuer, and config.client_id in the command below. You can find the OKTA_AZ_SERVER_ISSUER and the AUTHN_CLIENT_ID values in the bootstrap output file:
+Update the values for route.id, config.issuer, and config.client_id in the command below. You can find the OKTA_AZ_SERVER_ISSUER and the AUTHN_CLIENT_ID values in the bootstrap output file:
 `/okta_bootstrap/output/standard.json`
 
 and then execute this command:
@@ -143,7 +143,7 @@ curl -i -X POST \
 again, capture the route id from the result.
 
 ### Add the OIDC plugin to the /moons route
-Use the same command as above, but make sure you update the `route_id` and `scopes_required` values.
+Use the same command as above, but make sure you update the `route.id` and `scopes_required` values.
 
 ```
 curl -i -X POST \
